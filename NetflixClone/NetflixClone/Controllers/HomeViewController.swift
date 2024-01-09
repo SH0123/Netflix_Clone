@@ -102,7 +102,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 private extension HomeViewController {
     func getTrendingMovies() {
-        APICaller.shared.getTrendingMovies { results in
+        APIHandler.shared.getTrendingMovies { results in
             switch results {
             case .success(let movies):
                 print(movies)

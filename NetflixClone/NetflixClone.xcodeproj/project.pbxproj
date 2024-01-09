@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E6022F7E2B4D04F5005358EA /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6022F7D2B4D04F5005358EA /* Title.swift */; };
 		E6022F802B4D0820005358EA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6022F7F2B4D0820005358EA /* Extensions.swift */; };
+		E61EA9E72B4D10C200E2E2C5 /* APIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E61EA9E62B4D10C200E2E2C5 /* APIHandler.swift */; };
 		E6672DF92AB82C3B008A5BC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6672DF82AB82C3B008A5BC5 /* AppDelegate.swift */; };
 		E6672DFB2AB82C3B008A5BC5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6672DFA2AB82C3B008A5BC5 /* SceneDelegate.swift */; };
 		E6672DFD2AB82C3B008A5BC5 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6672DFC2AB82C3B008A5BC5 /* MainTabBarViewController.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		E6022F7D2B4D04F5005358EA /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		E6022F7F2B4D0820005358EA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		E61EA9E62B4D10C200E2E2C5 /* APIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHandler.swift; sourceTree = "<group>"; };
 		E6672DF52AB82C3B008A5BC5 /* NetflixClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetflixClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6672DF82AB82C3B008A5BC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6672DFA2AB82C3B008A5BC5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		E6672E182AB83A11008A5BC5 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				E61EA9E62B4D10C200E2E2C5 /* APIHandler.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 			files = (
 				E6672E122AB82FB5008A5BC5 /* SearchViewController.swift in Sources */,
 				E6672DFD2AB82C3B008A5BC5 /* MainTabBarViewController.swift in Sources */,
+				E61EA9E72B4D10C200E2E2C5 /* APIHandler.swift in Sources */,
 				E6672E1A2AB83A63008A5BC5 /* CollectionViewTableViewCell.swift in Sources */,
 				E6AF1B7D2B4BF93900DC5403 /* APICaller.swift in Sources */,
 				E67729892B46A22B00832B5C /* HeroHeaderUIView.swift in Sources */,
