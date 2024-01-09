@@ -10,8 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
     
     let sectionTitles: [String] = ["Trending Movies",
-                                   "Popular",
                                    "Trending TV",
+                                   "Popular",
                                    "Upcoming Moviews",
                                    "Top Rated"]
     
@@ -33,6 +33,8 @@ class HomeViewController: UIViewController {
         
         let headerView = HeroHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         homeFeedTable.tableHeaderView = headerView
+        
+        getTrendingMovies()
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,15 +42,16 @@ class HomeViewController: UIViewController {
         homeFeedTable.frame = view.bounds
     }
     
-    func configureNavbar() {
+    private func configureNavbar() {
         navigationItem.rightBarButtonItems = [
             UIBarButtonItem(image: UIImage(systemName: "person"), style: .done, target: self, action: nil),
             UIBarButtonItem(image: UIImage(systemName: "play.rectangle"), style: .done, target: self, action: nil)
         ]
-        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.tintColor = .white
     }
 }
 
+// MARK: delegate, datasource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,10 +77,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let header = view as? UITableViewHeaderFooterView else { return }
         var content = header.defaultContentConfiguration()
         content.textProperties.font = .systemFont(ofSize: 18, weight: .semibold)
-        content.textProperties.color = .black
-        content.text = sectionTitles[section]
+        content.textProperties.color = .white
+        content.text = sectionTitles[section].capitalizeFirstLetter()
         header.contentConfiguration = content
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -93,5 +95,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let offset = scrollView.contentOffset.y + defaultOffset
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
+    }
+}
+
+// MARK: function
+
+private extension HomeViewController {
+    func getTrendingMovies() {
+        APICaller.shared.getTrendingMovies { results in
+            switch results {
+            case .success(let movies):
+                print(movies)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
